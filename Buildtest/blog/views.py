@@ -51,7 +51,4 @@ class CategoryListView(ListAPIView):
     queryset = Category.objects.all()  # Fetch all categories from the database
     serializer_class = CategorySerializer  # Use the CategorySerializer to return data
 
-    # Custom DELETE method to delete all blog posts
-    def delete(self, request, *args, **kwargs):
-        Blog.objects.all().delete()  # Delete all blog posts
-        return Response({"message": "All blogs have been deleted."}, status=status.HTTP_204_NO_CONTENT)
+  
