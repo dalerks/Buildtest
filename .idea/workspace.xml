@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bca0866e-a394-4572-8298-9e061ea8609b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Buildtest.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Buildtest/blog/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Buildtest/blog/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Buildtest/blog/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Buildtest/blog/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="bca0866e-a394-4572-8298-9e061ea8609b" name="Changes" comment="inti commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,12 +98,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1743097347541</updated>
-      <workItem from="1743097348537" duration="8347000" />
+      <workItem from="1743097348537" duration="8653000" />
     </task>
+    <task id="LOCAL-00001" summary="inti commit">
+      <option name="closed" value="true" />
+      <created>1743108388502</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1743108388502</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="inti commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="inti commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
