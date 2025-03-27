@@ -1,0 +1,122 @@
+
+# Django Blog API
+
+This project provides a simple API for managing blog posts, including CRUD operations such as creating, reading, updating, and deleting blog entries. It supports both HTTP and HTTPS, with instructions below for running the development server securely over HTTPS.
+
+## Features
+- Create, update, retrieve, and delete blog posts
+- Support for filtering blog posts by category
+- HTTPS support for local development
+
+## Prerequisites
+
+Before you can run the project locally, make sure you have the following installed:
+- Python 3.11 or above
+- Django 5.1.7 (or above)
+- Django REST Framework
+- PostgreSQL (or any other preferred database setup)
+- OpenSSL (for generating SSL certificates)
+
+## Running the Project Locally
+
+### 1. Clone the Repository
+
+First, clone the repository to your local machine:
+```bash
+git clone https://github.com/yourusername/Buildtest.git
+cd Buildtest
+```
+
+### 2. Set up a Virtual Environment
+
+To manage dependencies, it’s best to set up a Python virtual environment. Run the following commands:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate  # On Windows use `.venv\Scripts\activate`
+```
+
+### 3. Install Dependencies
+
+Install all necessary dependencies using `pip`:
+
+```bash
+pip install -r requirements.txt
+```
+
+This will install Django, Django REST Framework, and any other required libraries.
+
+### 4. Set up the Database
+
+Make sure you have your PostgreSQL (or your preferred database) set up. Update the `DATABASES` configuration in `settings.py` if necessary.
+
+Then, run the following commands to apply migrations:
+
+```bash
+python manage.py migrate
+```
+
+### 5. Generate SSL Certificates (For HTTPS)
+
+If you don’t already have SSL certificates, you can generate self-signed certificates using OpenSSL. This is fine for local development but should never be used in production.
+
+Run the following commands to generate a certificate (`localhost.crt`) and private key (`localhost.key`):
+
+#### Linux / macOS:
+```bash
+# Navigate to your project directory
+cd Buildtest
+
+# Generate a private key (localhost.key)
+openssl genpkey -algorithm RSA -out localhost.key
+
+# Generate a certificate signing request (localhost.csr)
+openssl req -new -key localhost.key -out localhost.csr
+
+# Create a self-signed certificate valid for 365 days (localhost.crt)
+openssl x509 -req -in localhost.csr -signkey localhost.key -out localhost.crt -days 365
+```
+
+#### Windows (via Command Prompt):
+```bash
+# Navigate to your project directory
+cd Buildtest
+
+# Generate a private key (localhost.key)
+openssl genpkey -algorithm RSA -out localhost.key
+
+# Generate a certificate signing request (localhost.csr)
+openssl req -new -key localhost.key -out localhost.csr
+
+# Create a self-signed certificate valid for 365 days (localhost.crt)
+openssl x509 -req -in localhost.csr -signkey localhost.key -out localhost.crt -days 365
+```
+
+**Note**: Make sure to specify the "Common Name" as `localhost` when prompted during the certificate generation process.
+
+### 6. Running the Development Server over HTTPS
+
+After generating your SSL certificates, you can run the Django development server over HTTPS by using the following command:
+
+```bash
+python manage.py runserver_plus --cert-file localhost.crt --key-file localhost.key 5001
+```
+
+This will start the server at `https://localhost:5001`.
+
+### Troubleshooting SSL Issues:
+- **Certificate Warnings**: Since the certificate is self-signed, browsers will likely show warnings. You can ignore them for local development.
+- **Browser Trust**: If you want to remove browser warnings, you can install the generated certificate into your browser's trusted certificate store, but for development purposes, it's usually not required.
+
+### 7. Stopping the Server
+
+To stop the server, simply press `Ctrl+C` in the terminal where the server is running.
+
+## Additional Notes
+
+- **Security Warning**: This method uses a self-signed SSL certificate, which is **not secure for production**. For production deployments, you should obtain a certificate from a trusted Certificate Authority (CA) such as Let's Encrypt or purchase one from a commercial provider.
+
+- **CORS**: If you're making requests from a frontend application running on a different domain (or port), you may need to enable [CORS](https://pypi.org/project/django-cors-headers/) in your Django settings.
+
+---
+
